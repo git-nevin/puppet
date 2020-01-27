@@ -1,0 +1,19 @@
+
+CentOS SSH Installation And Configuration
+
+
+To install the server and client type:
+# yum -y install openssh-server openssh-clients
+
+Edit /etc/ssh/sshd_config, enter:
+# vi /etc/ssh/sshd_config
+
+Uncomment 
+Port = 22
+PasswordAuthentication yes   (comment PasswordAuthentication no)
+
+Start the service:
+# chkconfig sshd on
+# service sshd start
+# reboot
+
